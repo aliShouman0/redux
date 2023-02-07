@@ -4,4 +4,3 @@
  - ## concise modern Redux code,
  - ## Everything about Redux including the whats, whys, hows, and industry best practices.
 
-## With Help from [codewithmosh](https://codewithmosh.com/)
