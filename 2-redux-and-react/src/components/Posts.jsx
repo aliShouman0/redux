@@ -15,10 +15,18 @@ function Posts() {
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
+  const PostItem = posts.map((post) => (
+    <div key={post.id}>
+      <h3>{post.title}</h3>
+      <p>{post.body}</p>
+    </div>
+  ));
+
   return (
     <div>
       <h1>Posts</h1>
+      {PostItem}
     </div>
   );
 }
