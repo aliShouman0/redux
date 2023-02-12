@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { createPost } from "../redux/actions/postAction";
 
-function PostForm() {
+function PostForm(props) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -11,15 +13,8 @@ function PostForm() {
       body,
     };
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(post),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    //call action
+    props.createPost(post);
   };
 
   return (
@@ -57,4 +52,6 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+ 
+
+export default connect(null, { createPost })(PostForm);
